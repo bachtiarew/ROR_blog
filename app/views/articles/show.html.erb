@@ -1,0 +1,26 @@
+<h1>Show Articles</h1>
+<hr>
+<div>
+  <p>
+    <label>Judul : </label>
+    <%= @article.title %>
+  </p>
+  <p>
+    <label>Keterangan : </label>
+    <%= @article.text %>
+  </p>
+</div>
+
+<h2>Comments </h2>
+
+<%#  render @article.comments %>
+<% @article.comments.each  do |comment| %>
+<%= render comment %>
+<% end %>
+
+
+<h2>Add a Comments</h2>
+<%= render 'comments/form' %> 
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
